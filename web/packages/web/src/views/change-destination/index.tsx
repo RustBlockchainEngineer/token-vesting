@@ -13,8 +13,9 @@ import BN from 'bn.js';
 import { AccountInfo, Connection, PublicKey } from '@solana/web3.js';
 import { getFilteredProgramAccounts } from '@solana/spl-name-service';
 import { Link } from 'react-router-dom';
+import {useConnection, useUserAccounts} from "@oyster/common";
 
-export const Besting = () => {
+export const ChangeDestination = () => {
   const connection = useConnection();
   const wallet = useWallet();
   const userTokenAccounts = useUserAccounts();

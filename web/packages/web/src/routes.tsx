@@ -1,23 +1,8 @@
 import { HashRouter, Route, Switch } from 'react-router-dom';
 import { Providers } from './providers';
-import {
-  AnalyticsView,
-  ArtCreateView,
-  ArtistsView,
-  ArtistView,
-  ArtView,
-  ArtworksView,
-  AuctionCreateView,
-  AuctionView,
-  JoinRaffleView,
-} from './views';
-import { AdminView } from './views/admin';
-import { BillingView } from './views/auction/billing';
-import { StoreListView } from './views/storeList';
-import { MintNFTStoreView } from './views/mintNFTStore';
-import { Besting } from './views/besting';
-import { GetTicketView } from './views/getTicket';
-import { ClaimView } from './views/claim';
+import { Lock } from './views/lock';
+import { Unlock } from './views/unlock';
+import { ChangeDestination } from './views/change-destination';
 
 export function Routes() {
   return (
@@ -25,8 +10,9 @@ export function Routes() {
       <HashRouter basename={'/'}>
         <Providers>
           <Switch> 
-            <Route exact path="/lottery" component={() => <Besting />} />
-            <Route path="/" component={() => <div />} />
+            <Route exact path="/unlock" component={() => <Unlock />} />
+            <Route exact path="/change-destination" component={() => <Unlock />} />
+            <Route path="/" component={() => <Lock />} />
           </Switch>
         </Providers>
       </HashRouter>
